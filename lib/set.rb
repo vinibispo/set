@@ -3,6 +3,9 @@
 # rubocop:disable Style/NumericPredicate
 
 class Set
+  NON_VALID_INDEX = -1
+
+  private_constant :NON_VALID_INDEX
   private attr_accessor :elements
 
   attr_accessor :size
@@ -26,7 +29,7 @@ class Set
   def contains?(element)
     index = find_index(element)
 
-    index != -1
+    index != NON_VALID_INDEX
   end
 
   def remove(element)
@@ -34,7 +37,7 @@ class Set
 
     index = find_index(element)
 
-    return if index == -1
+    return if index == NON_VALID_INDEX
 
     elements[index] = elements[size - 1]
     self.size -= 1
@@ -46,7 +49,7 @@ class Set
     for i in 0..size - 1
       return i if elements[i] == element
     end
-    -1
+    NON_VALID_INDEX
   end
 end
 
