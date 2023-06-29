@@ -30,10 +30,16 @@ class Set
     false
   end
 
-  def remove(_element)
+  def remove(element)
     return if empty?
 
-    self.size -= 1
+    for i in 0..size - 1
+      next unless elements[i] == element
+
+      elements[i] = elements[size - 1]
+      self.size -= 1
+      return
+    end
   end
 end
 
