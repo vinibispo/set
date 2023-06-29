@@ -16,4 +16,12 @@ RSpec.describe Set do
       expect(set.empty?).to eq(false)
     end
   end
+
+  describe '#size' do
+    it 'returns 0 for an empty set' do
+      set = Set.new
+
+      expect(set.size).to eq(0)
+    end
+  end
 end
