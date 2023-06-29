@@ -112,5 +112,15 @@ RSpec.describe Set do
 
       expect(set.empty?).to eq(false)
     end
+
+    it 'removes the first element from a set with two elements when comparing with the first element' do
+      set = Set.new
+
+      set.add('1')
+      set.add('2')
+      set.remove('1')
+
+      expect(set.contains?('1')).to eq(false)
+    end
   end
 end
