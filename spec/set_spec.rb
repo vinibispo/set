@@ -123,4 +123,23 @@ RSpec.describe Set do
       expect(set.contains?('1')).to eq(false)
     end
   end
+
+  describe '#add' do
+    it 'adds an element to an empty set' do
+      set = Set.new
+
+      set.add('1')
+
+      expect(set.contains?('1')).to eq(true)
+    end
+
+    it 'doesn\'t add the same element twice to a set' do
+      set = Set.new
+
+      set.add('1')
+      set.add('1')
+
+      expect(set.size).to eq(1)
+    end
+  end
 end
