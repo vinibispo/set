@@ -63,5 +63,15 @@ RSpec.describe Set do
 
       expect(expected).to eq(true)
     end
+
+    it 'returns false for a set with one element when comparing with a different element' do
+      set = Set.new
+
+      set.add('1')
+
+      expected = set.contains?('2')
+
+      expect(expected).to eq(false)
+    end
   end
 end
