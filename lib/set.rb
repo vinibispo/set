@@ -2,6 +2,7 @@ class Set
   def initialize
     self.is_empty = true
     self.size = 0
+    self.is_contained = false
   end
 
   def empty?
@@ -11,13 +12,14 @@ class Set
   def add(_element)
     self.is_empty = false
     self.size += 1
+    self.is_contained = true
   end
 
   def contains?(_element)
-    false
+    is_contained
   end
 
-  private attr_accessor :is_empty
+  private attr_accessor :is_empty, :is_contained
 
   attr_accessor :size
 
