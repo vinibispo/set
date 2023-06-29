@@ -33,7 +33,7 @@ class Set
   def remove(_element)
     return if empty?
 
-    nil
+    self.size -= 1
   end
 end
 
