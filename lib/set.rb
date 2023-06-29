@@ -1,9 +1,9 @@
 # rubocop:disable Style/For
 # rubocop:disable Style/AccessModifierDeclarations
-# rubocop:disable Style/NumericPredicate
 
 class Set
   NON_VALID_INDEX = -1
+  EMPTY_SIZE = 0
 
   private_constant :NON_VALID_INDEX
   private attr_accessor :elements
@@ -13,12 +13,12 @@ class Set
   private :size=
 
   def initialize
-    self.size = 0
+    self.size = EMPTY_SIZE
     self.elements = []
   end
 
   def empty?
-    size == 0
+    size == EMPTY_SIZE
   end
 
   def add(element)
@@ -55,4 +55,3 @@ end
 
 # rubocop:enable Style/For
 # rubocop:enable Style/AccessModifierDeclarations
-# rubocop:enable Style/NumericPredicate
