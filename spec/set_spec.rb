@@ -103,5 +103,14 @@ RSpec.describe Set do
 
       expect(set.empty?).to eq(true)
     end
+
+    it 'removes nothing from a set with one element when comparing with a different element' do
+      set = Set.new
+
+      set.add('1')
+      set.remove('2')
+
+      expect(set.empty?).to eq(false)
+    end
   end
 end
