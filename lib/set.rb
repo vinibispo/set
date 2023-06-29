@@ -1,5 +1,4 @@
 # rubocop:disable Style/For
-# rubocop:disable Style/IfUnlessModifier
 # rubocop:disable Style/AccessModifierDeclarations
 # rubocop:disable Style/NumericPredicate
 
@@ -26,15 +25,18 @@ class Set
 
   def contains?(element)
     for i in 0..size - 1
-      if elements[i] == element
-        return true
-      end
+      return true if elements[i] == element
     end
     false
+  end
+
+  def remove(_element)
+    return if empty?
+
+    nil
   end
 end
 
 # rubocop:enable Style/For
-# rubocop:enable Style/IfUnlessModifier
 # rubocop:enable Style/AccessModifierDeclarations
 # rubocop:enable Style/NumericPredicate
