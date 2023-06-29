@@ -24,23 +24,29 @@ class Set
   end
 
   def contains?(element)
-    for i in 0..size - 1
-      return true if elements[i] == element
-    end
-    false
+    index = find_index(element)
+
+    index != -1
   end
 
   def remove(element)
     return if empty?
 
+    index = find_index(element)
+
+    return if index == -1
+
+    elements[index] = elements[size - 1]
+    self.size -= 1
+  end
+
+  private
+
+  def find_index(element)
     for i in 0..size - 1
-      next unless elements[i] == element
-
-      elements[i] = elements[size - 1]
-
-      self.size -= 1
-      return
+      return i if elements[i] == element
     end
+    -1
   end
 end
 
