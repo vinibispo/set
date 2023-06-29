@@ -1,27 +1,39 @@
+# rubocop:disable Style/For
+# rubocop:disable Style/IfUnlessModifier
+# rubocop:disable Style/AccessModifierDeclarations
+
 class Set
+  private attr_accessor :is_empty, :elements
+
+  attr_accessor :size
+
+  private :size=
+
   def initialize
     self.is_empty = true
     self.size = 0
-    self.is_contained = false
   end
 
   def empty?
     is_empty
   end
 
-  def add(_element)
+  def add(element)
     self.is_empty = false
     self.size += 1
-    self.is_contained = true
+    self.elements = [element]
   end
 
-  def contains?(_element)
-    is_contained
+  def contains?(element)
+    for i in 0..size - 1
+      if elements[i] == element
+        return true
+      end
+    end
+    false
   end
-
-  private attr_accessor :is_empty, :is_contained
-
-  attr_accessor :size
-
-  private :size=
 end
+
+# rubocop:enable Style/For
+# rubocop:enable Style/IfUnlessModifier
+# rubocop:enable Style/AccessModifierDeclarations
