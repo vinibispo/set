@@ -12,6 +12,7 @@ class Set
   def initialize
     self.is_empty = true
     self.size = 0
+    self.elements = []
   end
 
   def empty?
@@ -20,8 +21,8 @@ class Set
 
   def add(element)
     self.is_empty = false
+    elements[size] = element
     self.size += 1
-    self.elements = [element]
   end
 
   def contains?(element)
