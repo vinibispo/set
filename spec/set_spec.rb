@@ -34,5 +34,14 @@ RSpec.describe Set do
 
       expect(set.size).to eq(1)
     end
+
+    it 'returns 2 for a set with two elements' do
+      set = Set.new
+
+      set.add('1')
+      set.add('2')
+
+      expect(set.size).to eq(2)
+    end
   end
 end
