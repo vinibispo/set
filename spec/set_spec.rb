@@ -85,4 +85,14 @@ RSpec.describe Set do
       expect(expected).to eq(true)
     end
   end
+
+  describe '#remove' do
+    it 'doesn\'t remove anything from an empty set' do
+      set = Set.new
+
+      expected = -> { set.remove('1') }
+
+      expect { expected.call }.not_to raise_error
+    end
+  end
 end
