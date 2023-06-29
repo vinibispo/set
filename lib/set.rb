@@ -1,6 +1,7 @@
 class Set
   def initialize
     self.is_empty = true
+    self.size = 0
   end
 
   def empty?
@@ -12,4 +13,8 @@ class Set
   end
 
   private attr_accessor :is_empty
+
+  attr_accessor :size
+
+  private :size=
 end
