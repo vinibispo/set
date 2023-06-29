@@ -36,6 +36,8 @@ class Set
     for i in 0..size - 1
       next unless elements[i] == element
 
+      elements[i] = elements[size - 1]
+
       self.size -= 1
       return
     end
