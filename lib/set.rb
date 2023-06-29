@@ -10,6 +10,7 @@ class Set
 
   def add(_element)
     self.is_empty = false
+    self.size = 1
   end
 
   private attr_accessor :is_empty
