@@ -13,6 +13,10 @@ class Set
     self.size += 1
   end
 
+  def contains?(_element)
+    false
+  end
+
   private attr_accessor :is_empty
 
   attr_accessor :size
