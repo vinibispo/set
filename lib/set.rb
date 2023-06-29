@@ -1,26 +1,25 @@
 # rubocop:disable Style/For
 # rubocop:disable Style/IfUnlessModifier
 # rubocop:disable Style/AccessModifierDeclarations
+# rubocop:disable Style/NumericPredicate
 
 class Set
-  private attr_accessor :is_empty, :elements
+  private attr_accessor :elements
 
   attr_accessor :size
 
   private :size=
 
   def initialize
-    self.is_empty = true
     self.size = 0
     self.elements = []
   end
 
   def empty?
-    is_empty
+    size == 0
   end
 
   def add(element)
-    self.is_empty = false
     elements[size] = element
     self.size += 1
   end
@@ -38,3 +37,4 @@ end
 # rubocop:enable Style/For
 # rubocop:enable Style/IfUnlessModifier
 # rubocop:enable Style/AccessModifierDeclarations
+# rubocop:enable Style/NumericPredicate
