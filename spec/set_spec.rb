@@ -94,5 +94,14 @@ RSpec.describe Set do
 
       expect { expected.call }.not_to raise_error
     end
+
+    it 'removes the only element from a set with one element' do
+      set = Set.new
+
+      set.add('1')
+      set.remove('1')
+
+      expect(set.empty?).to eq(true)
+    end
   end
 end
