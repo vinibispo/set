@@ -22,6 +22,8 @@ class Set
   end
 
   def add(element)
+    return if contains?(element)
+
     elements[size] = element
     self.size += 1
   end
