@@ -44,4 +44,14 @@ RSpec.describe Set do
       expect(set.size).to eq(2)
     end
   end
+
+  describe '#contains?' do
+    it 'returns false for an empty set' do
+      set = Set.new
+
+      expected = set.contains?('1')
+
+      expect(expected).to eq(false)
+    end
+  end
 end
